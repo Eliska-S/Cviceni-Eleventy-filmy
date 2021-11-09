@@ -8,3 +8,39 @@ permalink: "/film/{{ film.nazev | slug }}/"
 ---
 
 <h2>{{ film.nazev }}</h2>
+
+<main>
+  <section>
+    <dl>
+      <dt>Rok:</dt>
+      <dd>{{ film.rok }}</dd>
+      <dt>Země:</dt>
+      <dd>{{ film.zeme | join(', ') }}</dd>
+      <dt>Žánr:</dt>
+      <dd>{{ film.zanr | join('/') }}</dd>
+      <dt>Délka:</dt>
+      <dd>{{ film.delka}} minut</dd>
+    </dl>
+  <section>
+
+  <section class="obsah">
+    <h3>Obsah</h3>
+    {% if film.obsah.autor.odkaz %} 
+    <p>{{ film.obsah.text }} (<a href="{{ film.obsah.autor.odkaz }}">{{ film.obsah.autor.jmeno }}</a>)</p>
+    {% else %}
+    <p>{{ film.obsah.text }} ({{ film.obsah.autor.jmeno }})</p>
+    {% endif %}
+  </section>
+</main>
+
+<aside>
+  <img src="{{ film.plakat.url }}" width="{{ film.plakat.sirka }}" height="{{ film.plakat.vyska }}">
+  <h3>Hodnocení</h3>
+  <h3>Související filmy</h3>
+  {% set podobneFilmy = film.souvisejici %}
+  <ul>
+    {% for zaznam in podobneFilmy %}
+		  <li>{{ zaznam.nazev }}</li>
+	  {% endfor %}
+  </ul>
+</aside>

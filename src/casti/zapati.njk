@@ -1,0 +1,21 @@
+<footer class="paticka">
+    <div class="paticka__obsah">
+        <div class="paticka__sloupce">
+            <section class="paticka__sekce">
+                <h4 class="paticka__sekce--nadpis">Podobné weby</h4>
+                <ul class="paticka__seznam">
+                    {% for web in podobneWeby %}
+		                <li><a href="{{ web.adresa }}">{{ web.nazev }}</a></li>
+	                {% endfor %}
+                </ul>
+            </section>
+            <section class="paticka__sekce">
+                <h4 class="paticka__sekce--nadpis">Obecné</h4>
+                <ul class="paticka__seznam">
+                    {% for odkaz in obecne %}
+		                <li><a href="{{ odkaz.adresa }}">{{ odkaz.nazev }}</a></li>
+	                {% endfor %}
+                </ul>
+        </div>
+    </div>
+</footer>

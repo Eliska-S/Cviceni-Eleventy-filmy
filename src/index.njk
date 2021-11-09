@@ -2,6 +2,7 @@
 layout: zakladni
 ---
 
+<h2>Všechny filmy</h2>
 <ul>
 	{% for film in filmy %}
 		<li><a href="/film/{{ film.nazev | slug }}">{{ film.nazev }}</a></li>
