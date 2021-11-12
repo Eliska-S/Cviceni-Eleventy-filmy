@@ -1,0 +1,26 @@
+.detail{
+    display: grid;
+    grid-template-columns: 1fr 12rem;
+    gap: 0 2.1rem;
+    &__podrobnosti{
+        margin: 0 0 1.7em;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 0.2em 0.5em;
+        &--popisek{
+            font-weight: 700;
+            margin: 0;
+        }
+        dd{
+            margin: 0;
+        }
+    }
+    &__obrazek{
+        max-width: 100%;
+        height: auto;
+    }
+}
+.podnadpis{
+    margin: 0.8em 0 0.2em;
+    font-size: 1.5rem;
+}

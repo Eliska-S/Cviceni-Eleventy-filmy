@@ -9,8 +9,10 @@
     <link rel="shortcut icon" href="/obrazky/favicon.svg"/>
 </head>
 <body>
-  {% include "hlavicka.njk" %} 
-  {{ content | safe }} 
-  {% include "zapati.njk" %} 
+  <div class="layout">
+    {% include "hlavicka.njk" %} 
+    {{ content | safe }} 
+    {% include "zapati.njk" %} 
+  </div>
 </body>
 </html>

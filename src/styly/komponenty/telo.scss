@@ -1,0 +1,29 @@
+.telo{
+    max-width: 50rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+.seznam{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    &__polozka{
+        padding: 0.2em 0;
+        line-height: 1.1;
+    }
+    &__odkaz{
+        color: #3d5afe;
+        text-decoration: none;
+        cursor: pointer;
+        &::before{
+            content: "";
+            background-color:#3d5afe;
+            display: inline-block;
+            width: 0.5em;
+            height: 0.5em;
+            margin-right: 0.5em;
+            margin-bottom: 0.1em;
+        }
+    }
+}
