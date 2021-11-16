@@ -15,6 +15,15 @@
             margin: 0;
         }
     }
+    &__odkaz{
+        text-decoration: none;
+        color: $doplnkova-barva;
+        font-style: italic;
+        &:hover,
+		&:focus {
+			text-decoration: underline;
+		}
+    }
     &__obrazek{
         max-width: 100%;
         height: auto;
@@ -24,3 +33,4 @@
     margin: 0.8em 0 0.2em;
     font-size: 1.5rem;
 }
+

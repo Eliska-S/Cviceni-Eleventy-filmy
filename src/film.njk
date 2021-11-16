@@ -23,22 +23,20 @@ permalink: "/film/{{ film.nazev | slug }}/"
       </dl>
       <h3 class="podnadpis">Obsah</h3>
       {% if film.obsah.autor.odkaz %} 
-      <p class="detail__obsah">{{ film.obsah.text }} (<a href="{{ film.obsah.autor.odkaz }}">{{ film.obsah.autor.jmeno }}</a>)</p>
+        <p class="detail__obsah">{{ film.obsah.text }} (<a class="detail__odkaz" href="{{ film.obsah.autor.odkaz }}">{{ film.obsah.autor.jmeno }}</a>)</p>
       {% else %}
-      <p class="detail__obsah">{{ film.obsah.text }} ({{ film.obsah.autor.jmeno }})</p>
+        <p class="detail__obsah">{{ film.obsah.text }} (<em>{{ film.obsah.autor.jmeno }}</em>)</p>
       {% endif %}
     </main>
     <aside class="detail__dalsi">
       <img class="detail__obrazek" src="{{ film.plakat.url }}" width="{{ film.plakat.sirka }}" height="{{ film.plakat.vyska }}">
       <h3 class="podnadpis">Hodnocení</h3>
-      <span class="hvezdy hvezdy__skore-{{ film.hodnoceni }}"></span>
-      <h3 class="podnadpis">Související filmy</h3>
-      {% set filmy = film.souvisejici %}
-      <ul>
-        {% for film in filmy %}
-          <li>{{ film.nazev }}</li>
-        {% endfor %}
-      </ul>
+      <span class="hodnoceni hodnoceni--skore-{{ film.hodnoceni }}"></span>
+      {% if film.souvisejici %} 
+        <h3 class="podnadpis">Související filmy</h3>
+        {% set filmy = film.souvisejici %}
+        {% include "seznamFilmu.njk" %}
+      {% endif %}
     </aside>
   </div>
 </section>
